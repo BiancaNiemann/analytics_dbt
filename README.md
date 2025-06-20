@@ -178,4 +178,7 @@ In production, dbt Cloud can be scheduled to run dbt test. The ‘Run History’
 - add in the scema.yml file as description under model name (think about targeting audience and how the desc will help them)
 - when a lot of data for description can use a doc block {%docs order_status %} and {% enddocs %} and it will link to the markdown file for the info and link with description: "{{doc('order_status')}}"
 - can have multi doc blocks, just refer to correct name when connecting it to the schema
-
+- render documatation in different site to look at it (dbt docs generate)
+- left side above version control, next to branch name click the book icon to open a new tab
+- bottom right hand side has blue circle, if clicked the lineage will show
+- use select at bottom of lineage chart to select what you want to see

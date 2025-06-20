@@ -7,8 +7,10 @@ sources:
       schema: stripe
       tables:
         - name: payment
-          description: One record per payment
+          description: "{{doc('payment_status')}}"
           loaded_at_field: _batched_at
           freshness:
             warn_after: {count: 3, period: day}
             error_after: {count: 5, period: day}
+        - name: amount
+          description: total amount divided by 100 to show in dollars and not cents value
