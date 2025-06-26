@@ -24,7 +24,7 @@ customers as (
 
     select 
 
-        first_name || ' ' || last_name as name, 
+        first_name || ' ' || last_name as cust_name, 
         * 
 
     from base_customers

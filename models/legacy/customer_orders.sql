@@ -50,7 +50,7 @@ join (
     ) b
     on a.user_id = b.id
 
-    left outer join {{ source('stripe', 'payments') }} c
+    left outer join {{ source('stripe', 'payment') }} c
     on a.id = c.orderid
 
     where a.status NOT IN ('pending') and c.status != 'fail'
@@ -60,7 +60,7 @@ join (
 ) customer_order_history
 on orders.user_id = customer_order_history.customer_id
 
-left outer join {{ source('stripe', 'payments') }} 
+left outer join {{ source('stripe', 'payment') }} 
 on orders.id = payment.orderid
 
 where payment.status != 'fail'
